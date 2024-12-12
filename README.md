@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@rabah-khalek](https://github.com/rabah-khalek/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
