@@ -1,0 +1,45 @@
+schema_version: 1
+
+context:
+  name: mixpanel
+  version: 4.11.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mixpanel-${{ version }}.tar.gz
+  sha256: ebfbad5732963d9844619e8d1e57b01f2b77f6e6b13cbe48d892479880665892
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=61.0
+  run:
+    - python >=${{ python_min }}
+    - requests >=2.32.5
+
+tests:
+  - python:
+      imports:
+        - mixpanel
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Official Mixpanel library for Python
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  homepage: https://github.com/mixpanel/mixpanel-python
+
+extra:
+  recipe-maintainers:
+    - rabah-khalek
+    - synapticarbors
