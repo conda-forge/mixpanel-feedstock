@@ -1,5 +1,5 @@
 {% set name = "mixpanel" %}
-{% set version = "4.10.1" %}
+{% set version = "4.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mixpanel-{{ version }}.tar.gz
-  sha256: 29a6b5773dd34f05cf8e249f4e1d16e7b6280d6b58894551ce9a5aad7700a115
+  sha256: ebfbad5732963d9844619e8d1e57b01f2b77f6e6b13cbe48d892479880665892
 
 build:
   noarch: python
