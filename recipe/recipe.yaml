@@ -36,7 +36,9 @@ tests:
       pip_check: true
       python_version: 
         - ${{ python_min }}.*
-        - "*"
+        # https://github.com/mixpanel/mixpanel-python/issues/183
+        # currently broken on 3.14
+        # - "*"
 
 about:
   summary: Official Mixpanel library for Python
