@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: mixpanel
-  version: "5.2.0"
+  version: "5.4.0"
 
 package:
-  name: ${{ name|lower }}
+  name: mixpanel
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mixpanel-${{ version }}.tar.gz
-  sha256: 6ee99415b4e3e4b2aa6d73bf5df134cd5d60a72b5577c557dd2537c92085ca32
+  url: https://pypi.org/packages/source/m/mixpanel/mixpanel-${{ version }}.tar.gz
+  sha256: f80f10b689904831e81c326c50a4944c9260c1abda1bef6339ae346a6ca9a959
 
 build:
   number: 0
@@ -35,7 +34,11 @@ tests:
       imports:
         - mixpanel
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version: 
+        - ${{ python_min }}.*
+        # https://github.com/mixpanel/mixpanel-python/issues/183
+        # currently broken on 3.14
+        # - "*"
 
 about:
   summary: Official Mixpanel library for Python
