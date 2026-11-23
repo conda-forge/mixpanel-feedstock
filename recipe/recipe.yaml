@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "5.4.1"
+  version: "5.5.0"
 
 package:
   name: mixpanel
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/m/mixpanel/mixpanel-${{ version }}.tar.gz
-  sha256: 633f82d478e671732f13b939ba16b8a1689b0a605885b871f3bcf6dbaf6667ac
+  sha256: e2a17f6f0db4bfc5a61429b1c718ae28ff40cee9e6fb50a0ed1e57614e615e2a
 
 build:
   number: 0
